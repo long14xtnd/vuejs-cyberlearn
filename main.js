@@ -92,20 +92,29 @@ function getRandomInt(min, max) {
 //     },
 
 // }).mount('#two-way-binding');
+
 //Computed and watch 
 Vue.createApp({
     data: function() {
         return {
             firstName: 'Long',
             lastName: 'Doan Hai',
-            count: 0
+            count: 0,
+            fullNameData: ''
         }
     },
     watch: {
         count(newValue, oldValue) {
             console.log('New Value: ' + newValue);
             console.log('Old Value: ' + oldValue);
+        },
+        lastName(newValue) {
+            this.fullNameData = newValue + " " + this.firstName;
+        },
+        firstName(newValue) {
+            this.fullNameData = this.lastName + " " + newValue
         }
+
     },
     computed: {
         fullName() {
@@ -126,3 +135,32 @@ Vue.createApp({
     }
 
 }).mount('#computed-and-watchers');
+
+// Class and style binding
+Vue.createApp({
+    data: function() {
+        return {
+
+            styleOfP: {
+                backgroundColor: "red",
+                color: "yellow",
+                padding: "20px",
+                fontSize: "30px"
+            },
+
+            attrOfP: {
+                textAlign: "left",
+
+            },
+            active: false,
+        }
+    },
+    methods: {
+        handleChangeColor() {
+            return this.styleOfP.color = 'white'
+        },
+        handleHiddenIMG() {
+            this.active = true;
+        }
+    }
+}).mount('#class-and-style-binding');
