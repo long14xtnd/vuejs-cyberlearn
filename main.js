@@ -182,3 +182,29 @@ Vue.createApp({
         }
     }
 }).mount('#if-else')
+
+
+// v-for
+Vue.createApp({
+    data: function() {
+        return {
+            listPlayers: [{
+                    name: 'Kevin De Bruyne',
+                    image: 'https://kenh14cdn.com/thumb_w/660/2017/kevin-de-bruyne-1511406962965.jpg'
+                },
+                {
+                    name: 'Phil Foden',
+                    image: 'https://media.congluan.vn/files/content/2021/06/02/foden-co-mot-mua-giai-thanh-cong-cung-man-city-o-dau-truong-quoc-noi-21293426.jpg'
+                },
+                {
+                    name: 'Riad Mahrez',
+                    image: 'https://cdnmedia.thethaovanhoa.vn/Upload/wCPbdqwgmrVWEZatr1gVg/files/2021/05/mahrez%20vs%20psg%204.jpg'
+                },
+                {
+                    name: 'Joao Cancelo',
+                    image: 'https://image.thanhnien.vn/w1024/Uploaded/2022/cjhwpdhnw/2022_01_01/000-9ve6xe-7252.jpg'
+                }
+            ]
+        }
+    }
+}).mount('#v-for')

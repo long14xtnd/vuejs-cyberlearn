@@ -129,7 +129,7 @@
         </section> -->
 
         <!-- v-if v-else -->
-        <section id="if-else" class="bg-dark text-center text-light p-3 m-3 rounded">
+        <!-- <section id="if-else" class="bg-dark text-center text-light p-3 m-3 rounded">
             <h2>If Else trong Vue</h2>
             <hr />
             <p v-if="isLogin" class="alert alert-success">
@@ -149,7 +149,23 @@
                     <button class="btn btn-primary mx-2" @click="selectHero('yasuo')">Yasuo</button>
                     <button class="btn btn-primary mx-2" @click="selectHero('leesin')">Leesin</button>
                 </div>
+                <div class="mt-3">
+                    <p v-show="false" class="alert alert-success"></p>
+                </div>
             </div>
+        </section> -->
+
+        <!-- v-for  -->
+        <section id="v-for" class="bg-dark text-center text-light p-3 m-3 rounded">
+            <h2>V-for</h2>
+            <hr />
+            <ul style="list-style: none;">
+                <li v-for="item in listPlayers">
+                    <a :href="item.image"><img :src="item.image" :alt="item.name" class="img-thumbnail"></a>
+                    <p>{{ item.name}}</p>
+                </li>
+
+            </ul>
         </section>
     </div>
 
