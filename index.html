@@ -117,7 +117,7 @@
         </section> -->
 
         <!-- Class and style binding  -->
-        <section id="class-and-style-binding" class="bg-dark text-center text-light p-3 m-3 rounded">
+        <!-- <section id="class-and-style-binding" class="bg-dark text-center text-light p-3 m-3 rounded">
             <h2>class-and-style-binding</h2>
             <hr />
             <p style="font-weight:500" :style="[styleOfP,attrOfP]">My content</p>
@@ -126,6 +126,16 @@
                 <img src="longdz.JPG" alt="" class="img-fluid   displayIMG" :class="{hiddenIMG : active}">
                 <button class="btn btn-primary mt-2" @click="handleHiddenIMG">Hidden Image</button>
             </div>
+        </section> -->
+
+        <!-- v-if v-else -->
+        <section id="if-else" class="bg-dark text-center text-light p-3 m-3 rounded">
+            <h2>If Else trong Vue</h2>
+            <hr />
+            <p v-if="isLogin" class="alert alert-success">Chúc mừng Đoàn Hải Long đã login thành công</p>
+            <button v-else class="btn btn-primary mt-2" @click="login">Login</button>
+
+
         </section>
 
     </div>

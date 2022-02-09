@@ -164,3 +164,16 @@ Vue.createApp({
         }
     }
 }).mount('#class-and-style-binding');
+
+Vue.createApp({
+    data: function() {
+        return {
+            isLogin: false,
+        }
+    },
+    methods: {
+        login() {
+            return this.isLogin = true
+        }
+    }
+}).mount('#if-else')
