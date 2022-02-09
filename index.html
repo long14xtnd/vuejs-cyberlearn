@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 </head>
 
@@ -132,12 +132,25 @@
         <section id="if-else" class="bg-dark text-center text-light p-3 m-3 rounded">
             <h2>If Else trong Vue</h2>
             <hr />
-            <p v-if="isLogin" class="alert alert-success">Chúc mừng Đoàn Hải Long đã login thành công</p>
-            <button v-else class="btn btn-primary mt-2" @click="login">Login</button>
-
-
+            <p v-if="isLogin" class="alert alert-success">
+                Chúc mừng Đoàn Hải Long đã login thành công
+            </p>
+            <button v-else class="btn btn-primary mt-2 @click" @click="login">
+          Login
+        </button>
+            <div>
+                <h3>Chọn tướng</h3>
+                <img v-if="nameHero === 'zed'" src="https://cdnmedia.webthethao.vn/uploads/2021-06-09/zed-hang-hieu.jpg" alt="zed" class="img-thumbnail" />
+                <img v-else-if="nameHero === 'yasuo'" src="https://cdngarenanow-a.akamaihd.net/webmain/static/pss/lol/items_splash/yasuo_55.jpg" alt="yasuo" class="img-thumbnail" />
+                <img v-else-if="nameHero === 'leesin'" src="https://victory8.online/wp-content/uploads/2020/08/leesin-lien-minh-huyen-thoai-1-e1597644246760.jpg" alt="leesin" class="img-thumbnail" />
+                <p v-else class="alert alert-danger">Bạn vui lòng chọn tướng để chiến đấu</p>
+                <div class="mt-3">
+                    <button class="btn btn-primary mx-2" @click="selectHero('zed')">Zed</button>
+                    <button class="btn btn-primary mx-2" @click="selectHero('yasuo')">Yasuo</button>
+                    <button class="btn btn-primary mx-2" @click="selectHero('leesin')">Leesin</button>
+                </div>
+            </div>
         </section>
-
     </div>
 
     <!-- Optional JavaScript -->

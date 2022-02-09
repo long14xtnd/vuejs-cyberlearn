@@ -169,11 +169,16 @@ Vue.createApp({
     data: function() {
         return {
             isLogin: false,
+            nameHero: ''
         }
     },
     methods: {
         login() {
             return this.isLogin = true
+        },
+        selectHero(nameHero) {
+            return this.nameHero = nameHero;
+
         }
     }
 }).mount('#if-else')
