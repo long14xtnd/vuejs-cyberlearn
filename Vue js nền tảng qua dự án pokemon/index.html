@@ -160,9 +160,10 @@
             <h2>V-for</h2>
             <hr />
             <ul style="list-style: none;">
-                <li v-for="item in listPlayers">
-                    <a :href="item.image"><img :src="item.image" :alt="item.name" class="img-thumbnail"></a>
+                <li v-for="(item,index) in listPlayers " :key="item.id">
+                    <a :href="item.image "><img :src="item.image " :alt="item.name " class="img-thumbnail "></a>
                     <p>{{ item.name}}</p>
+                    {{ index }}
                 </li>
 
             </ul>

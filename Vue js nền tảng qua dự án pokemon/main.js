@@ -49,6 +49,8 @@ function getRandomInt(min, max) {
 //             }
 //         }
 //     }).mount('#method')
+
+
 // Raw - html
 // Vue.createApp({
 //     data: function() {
@@ -165,6 +167,8 @@ Vue.createApp({
     }
 }).mount('#class-and-style-binding');
 
+
+//v-if va v-else
 Vue.createApp({
     data: function() {
         return {
