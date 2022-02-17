@@ -7,7 +7,7 @@
         Detail
       </button>
     </div>
-    <p>{{ user }}</p>
+   <global-component/>
   </div>
 </template>
 

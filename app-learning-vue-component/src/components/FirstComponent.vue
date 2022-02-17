@@ -1,5 +1,6 @@
 <template>
     <h1>Xin chào các bạn hôm nay là valentine</h1>
+    <GlobalComponent />
 </template>
 <script>
 export default {
