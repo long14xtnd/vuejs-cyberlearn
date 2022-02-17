@@ -2,17 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3" v-for="(productItem,index) in proList" :key="index">
-        <ProductItem  :proItem="productItem"/>
+        <ProductItem  :proItem="productItem" :multiple="'Ngày thứ 2 trở thành f0'" />
       </div>
-      <!-- <div class="col-md-3">
-        <ProductItem />
-      </div>
-      <div class="col-md-3">
-        <ProductItem />
-      </div>
-      <div class="col-md-3">
-        <ProductItem />
-      </div> -->
+     
     </div>
   </div>
 </template>
