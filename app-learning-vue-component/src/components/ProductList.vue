@@ -1,10 +1,17 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-md-3" v-for="(productItem,index) in proList" :key="index">
-        <ProductItem  :proItem="productItem" :multiple="'Ngày thứ 2 trở thành f0'" />
+      <div
+        class="col-md-3"
+        v-for="(productItem, index) in proList"
+        :key="index"
+      >
+        <ProductItem
+          :proItem="productItem"
+          :multiple="'Ngày thứ 2 trở thành f0'"
+          @custom-handle-detail="handleSelect"
+        />
       </div>
-     
     </div>
   </div>
 </template>
@@ -12,6 +19,12 @@
 <script>
 import ProductItem from "./ProductItem.vue";
 export default {
+  methods:{
+    handleSelect(proItem){
+      console.log("đã work thành công",proItem)
+    }
+  },
+
   data() {
     return {
       proList: [

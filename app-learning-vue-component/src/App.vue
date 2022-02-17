@@ -1,25 +1,30 @@
 <template>
- <h1>Hello World</h1>
- <FirstComponent></FirstComponent>
- <FirstComponent/>
- <first-component></first-component>
- <first-component/>
- <SecondComponent></SecondComponent>
- <ProductList/>
+  <h1>Hello World</h1>
+  <FirstComponent></FirstComponent>
+  <FirstComponent />
+  <first-component></first-component>
+  <first-component />
+  <SecondComponent></SecondComponent>
+  <ProductList />
 </template>
 
 <script>
-import ProductList from "./components/ProductList.vue"
-import SecondComponent from "./components/SecondComponent.vue"
+import ProductList from "./components/ProductList.vue";
+import SecondComponent from "./components/SecondComponent.vue";
 import FirstComponent from "./components/FirstComponent.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-   FirstComponent,
-   SecondComponent,
-   ProductList
-  }
-}
+    FirstComponent,
+    SecondComponent,
+    ProductList,
+  },
+  provide() {
+    return {
+      user: "Trong tất cả những cái thằng tán em ấy thì anh là thằng đẹp zaii nhất và hoàng tử chỉ có anh thôi",
+    };
+  },
+};
 </script>
 
 <style>
