@@ -70,15 +70,23 @@
       :isOpen="isOpenModalCartList"
       :handleCloseModal="handleCloseModalCartList"
     >
-      <section>
-        <h1>Nội dung chi tiết giỏ hàng</h1>
-      </section>
+     <cart-list :cartList="cartList"></cart-list>
     </app-modal>
   </teleport>
 </template>
 
 <script>
+import CartList from './CartList.vue'
 export default {
+  props: {
+    cartList:{
+      type : Array,
+    }
+  },
+
+  components: {
+    CartList
+  },
   data() {
     return {
       isOpenModalCartList: false,

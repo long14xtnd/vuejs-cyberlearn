@@ -3,7 +3,7 @@
   <section class="product-list">
     <div class="row">
       <div class="col-md-3" v-for="(productItem,index) in productList" :key="index">
-        <product-item  :productItem="productItem"/>
+        <product-item  :productItem="productItem" @handle-buy="handleBuy"/>
       </div>
       
     </div>
@@ -106,6 +106,12 @@ export default {
   components: {
     ProductItem,
   },
+  methods: {
+    handleBuy(productItem){
+      console.log(productItem)
+      this.$emit("handle-buy",productItem);
+    }
+  }
 };
 </script>
 

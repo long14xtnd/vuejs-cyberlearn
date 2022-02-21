@@ -1,22 +1,33 @@
 <template>
- <header>
-   <the-header />
- </header>
- <main class="container">
-   <product-list/>
- </main>
+  <header>
+    <the-header :cartList="cartList"/>
+  </header>
+  <main class="container">
+    <product-list @handle-buy="handleBuy" />
+  </main>
 </template>
 
 <script>
-import TheHeader from './components/TheHeader.vue'
-import ProductList from "./components/ProductList.vue"
+import TheHeader from "./components/TheHeader.vue";
+import ProductList from "./components/ProductList.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     TheHeader,
-    ProductList
-  }
-}
+    ProductList,
+  },
+  data() {
+    return {
+      cartList: [],
+    };
+  },
+  methods: {
+    handleBuy(productItem) {
+      console.log(productItem);
+      this.cartList.push(productItem);
+    },
+  },
+};
 </script>
 
 <style>
@@ -26,6 +37,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
 }
 </style>

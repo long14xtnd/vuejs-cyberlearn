@@ -12,7 +12,7 @@
       </p>
     </div>
     <div class="text-center mb-3">
-      <button class="btn btn-danger ml-2">Mua</button>
+      <button class="btn btn-danger ml-2" @click="handleBuy(productItem)">Mua</button>
       <button class="btn btn-primary ml-2">Chi tiết</button>
     </div>
   </div>
@@ -25,6 +25,12 @@ export default {
       type: Object,
     },
   },
+  methods: {
+    handleBuy(productItem){
+      console.log(productItem);
+      this.$emit("handle-buy",productItem);
+    }
+  }
 };
 </script>
 
