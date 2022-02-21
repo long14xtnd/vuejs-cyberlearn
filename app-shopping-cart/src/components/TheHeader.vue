@@ -65,15 +65,16 @@
       </div>
     </div>
   </nav>
-
-  <app-modal 
-  :isOpen="isOpenModalCartList"
-  :handleCloseModal="handleCloseModalCartList"
-  >
-  <section>
-    <h1>Nội dung chi tiết giỏ hàng</h1>
-  </section>
-  </app-modal>
+  <teleport to="#app">
+    <app-modal
+      :isOpen="isOpenModalCartList"
+      :handleCloseModal="handleCloseModalCartList"
+    >
+      <section>
+        <h1>Nội dung chi tiết giỏ hàng</h1>
+      </section>
+    </app-modal>
+  </teleport>
 </template>
 
 <script>
