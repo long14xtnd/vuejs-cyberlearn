@@ -13,16 +13,20 @@
         />
       </div>
     </div>
+    <!-- <teleport to="body"> -->
+      <BaseModal />
+    <!-- </teleport> -->
   </div>
 </template>
 
 <script>
 import ProductItem from "./ProductItem.vue";
+import BaseModal from "./BaseModal.vue";
 export default {
-  methods:{
-    handleSelect(proItem){
-      console.log("đã work thành công",proItem)
-    }
+  methods: {
+    handleSelect(proItem) {
+      console.log("đã work thành công", proItem);
+    },
   },
 
   data() {
@@ -53,6 +57,7 @@ export default {
   },
   components: {
     ProductItem,
+    BaseModal,
   },
 };
 </script>
