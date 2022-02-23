@@ -60,7 +60,7 @@
       <div class="ml-2">
         <button class="btn btn-danger" @click="handleOpenModalCartList">
           <i class="fa fa-cart-plus mr-2"></i>
-          <span class="badge badge-light">0</span>
+          <span class="badge badge-light">{{ sumAmountCart }}</span>
         </button>
       </div>
     </div>
@@ -70,27 +70,38 @@
       :isOpen="isOpenModalCartList"
       :handleCloseModal="handleCloseModalCartList"
     >
-     <cart-list :cartList="cartList"></cart-list>
+      <cart-list
+        :cartList="cartList"
+        @handle-delete-cart="handleDelete"
+        @handle-up-cart="handleUp"
+        @handle-down-cart="handleDown"
+        @handle-up-or-down-amount="handleUpOrDownAmount"
+      ></cart-list>
     </app-modal>
   </teleport>
 </template>
 
 <script>
-import CartList from './CartList.vue'
+import CartList from "./CartList.vue";
 export default {
   props: {
-    cartList:{
-      type : Array,
-    }
+    cartList: {
+      type: Array,
+    },
   },
 
   components: {
-    CartList
+    CartList,
   },
   data() {
     return {
       isOpenModalCartList: false,
     };
+  },
+  computed: {
+    sumAmountCart() {
+      return this.cartList.reduce((sum, cart) => (sum += cart.amount), 0);
+    },
   },
   methods: {
     handleOpenModalCartList() {
@@ -98,6 +109,18 @@ export default {
     },
     handleCloseModalCartList() {
       this.isOpenModalCartList = false;
+    },
+    handleDelete(cart) {
+      this.$emit("handle-delete-cart", cart);
+    },
+    handleUpOrDownAmount(params) {
+      this.$emit("handle-up-or-down-amount", params);
+    },
+    handleUp(cart) {
+      this.$emit("handle-up-cart", cart);
+    },
+    handleDown(cart) {
+      this.$emit("handle-down-cart", cart);
     },
   },
 };

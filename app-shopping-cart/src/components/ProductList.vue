@@ -2,24 +2,27 @@
   <h1 class="text-danger mt-4 font-weight-bold">Sản phẩm nổi bật</h1>
   <section class="product-list">
     <div class="row">
-      <div class="col-md-3" v-for="(productItem,index) in productList" :key="index">
-        <product-item  :productItem="productItem" @handle-buy="handleBuy"/>
+      <div
+        class="col-md-3"
+        v-for="(productItem, index) in productList"
+        :key="index"
+      >
+        <product-item :productItem="productItem" @handle-buy="handleBuy" />
       </div>
-      
     </div>
   </section>
 </template>
 
 <script>
 import ProductItem from "./ProductItem.vue";
-import sp1 from "../assets/images/sp1.webp"
-import sp2 from "../assets/images/sp2.webp"
-import sp3 from "../assets/images/sp3.webp"
-import sp4 from "../assets/images/sp4.webp"
-import sp5 from "../assets/images/sp5.webp"
-import sp6 from "../assets/images/sp6.webp"
-import sp7 from "../assets/images/sp7.webp"
-import sp8 from "../assets/images/sp8.webp"
+import sp1 from "../assets/images/sp1.webp";
+import sp2 from "../assets/images/sp2.webp";
+import sp3 from "../assets/images/sp3.webp";
+import sp4 from "../assets/images/sp4.webp";
+import sp5 from "../assets/images/sp5.webp";
+import sp6 from "../assets/images/sp6.webp";
+import sp7 from "../assets/images/sp7.webp";
+import sp8 from "../assets/images/sp8.webp";
 export default {
   data() {
     return {
@@ -107,11 +110,11 @@ export default {
     ProductItem,
   },
   methods: {
-    handleBuy(productItem){
-      console.log(productItem)
-      this.$emit("handle-buy",productItem);
-    }
-  }
+    handleBuy(productItem) {
+      console.log(productItem);
+      this.$emit("handle-buy", productItem);
+    },
+  },
 };
 </script>
 
