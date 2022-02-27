@@ -4,3 +4,9 @@
      b3 : xử lý action ->mutation(update state)
      b4 : lấy state từ store để show lên màn hình 
      
+
+     --Chức năng xóa:
+     b1: xác định component có nút xóa(UserItem)
+     b2 : xử lý sự kiện click nút xóa -> dispatch action (gửi kèm id)
+     b3 : lên vuex(store) xử lý action ->commit mutation(xóa và cập nhật lại store)
+     b4 : lấy state từ store về để show lên màn hình 

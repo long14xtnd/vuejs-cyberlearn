@@ -66,7 +66,20 @@ const store = createStore({
         addUserMutation(state, payload) {
             // state.userList = [...state.userList, payload];
             state.userList.push(payload);
+        },
+        removeUserMutation(context, payload) {
+
+
+            // Hàm findIndex sẽ trả về key của phần tử đầu tiên trong mảng thỏa mãn được điều kiện kiểm tra(được truyền vào như một hàm).
+            const index = context.userList.findIndex(user => user.id === payload);
+            if (index !== -1) {
+                context.userList.splice(index, 1);
+            } else {
+                alert('Không tìm thấy id phù hợp')
+            }
+
         }
+
     },
     actions: {
         setSearchNameAction(context, payload) {
@@ -81,6 +94,11 @@ const store = createStore({
             // console.log(payload);
             const newUser = {...payload, id: Math.random() }
             context.commit("addUserMutation", newUser);
+        },
+        removeUserAction(context, payload) {
+            // console.log(context);
+            // console.log(payload);
+            context.commit("removeUserMutation", payload);
         }
     }
 })
