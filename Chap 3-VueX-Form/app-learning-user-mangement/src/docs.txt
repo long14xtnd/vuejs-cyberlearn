@@ -1,0 +1,6 @@
+     Chức năng add user:
+     b1: xử lý form
+     b2 : xử lý sự kiện click submit ->dispatch action lên store 
+     b3 : xử lý action ->mutation(update state)
+     b4 : lấy state từ store để show lên màn hình 
+     
