@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-body">
-      <form class="forms-sample" @submit.prevent="handleSubmit">
+      <form class="forms-sample" >
         <div class="form-group">
           <label for="username">Username</label>
           <input
@@ -159,7 +159,7 @@
         <button
           type="submit"
           class="btn btn-gradient-primary mr-2"
-          @click="handleAddUser(user)"
+          @click.prevent="handleSubmit()"
         >
           Submit
         </button>
@@ -170,8 +170,15 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { createNamespacedHelpers } from 'vuex'
+const {mapActions}=createNamespacedHelpers("user")
+
 export default {
+  props: {
+    userInfo: {
+      type: Object,
+    },
+  },
   data() {
     return {
       user: {
@@ -186,9 +193,19 @@ export default {
     };
   },
   methods: {
+    handleSubmit(){
+      if(this.userInfo){
+        //update
+        this.handleUpdateUser(this.user)
+      }else{
+        //addUserAction
+        this.handleAddUser(this.user)
+      }
+    },
     ...mapActions({
-         handleAddUser : "addUserAction"
-    })
+      handleAddUser: "addUserAction",
+      handleUpdateUser : "updateUserAction"
+    }),
     // handleAddUser() {
     //   // console.log("ok")
     //   console.log(this.name);
@@ -199,6 +216,11 @@ export default {
     //   console.log(this.type);
     //   console.log(this.description);
     // },
+  },
+  created() {
+    if (this.userInfo) {
+      this.user ={... this.userInfo}
+    }
   },
 };
 </script>

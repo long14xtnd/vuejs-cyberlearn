@@ -14,7 +14,9 @@
 
 <script>
 import UserItem from "./UserItem.vue";
-import { mapState,mapGetters  } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapState } = createNamespacedHelpers("user");
+
 export default {
   components: {
     UserItem,
@@ -27,26 +29,26 @@ export default {
   //====Cách viết mapState theo kiểu mảng ====
   // computed: mapState(["userList"]),
   //=======Cách viết mapState hay được sử dụng nhất======
-  computed:{
-    loading(){
+  computed: {
+    loading() {
       return false;
     },
-    userListByBoy(){
-      return this.$store.getters.userListByBoy
+    userListByBoy() {
+      return this.$store.getters.userListByBoy;
     },
     ...mapGetters({
-      userListFilterBoy : "userListByBoy",
-      userListBySearchName :"userListBySearchName"
+      userListFilterBoy: "userListByBoy",
+      userListBySearchName: "userListBySearchName",
     }),
     //*** viết có dấu ... như này để phân biệt mapState và có thể viểt các computed khác do người dùng tự tạo */
     ...mapState({
-    //trong vuejs nó khuyên chúng ta hạn chế cách dùng là this.$store để gọi dữ liệu vì store dữ liệu rất lớn truy cập kiểu như thế là ko nên
-    //chính vì thế nó mới sinh ra một thằng có tên là mapState để ta truy xuất dữ liệu
-    //(state) chỗ này tương đương với this.$store.state
-    userList: (state) => state.userList,
-    // userList : "userList" //Đây là cách viết khác nhưng ko nên dùng
-  }),
-  }
+      //trong vuejs nó khuyên chúng ta hạn chế cách dùng là this.$store để gọi dữ liệu vì store dữ liệu rất lớn truy cập kiểu như thế là ko nên
+      //chính vì thế nó mới sinh ra một thằng có tên là mapState để ta truy xuất dữ liệu
+      //(state) chỗ này tương đương với this.$store.state
+      userList: (state) => state.userList,
+      // userList : "userList" //Đây là cách viết khác nhưng ko nên dùng
+    }),
+  },
 };
 </script>
 

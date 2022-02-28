@@ -36,14 +36,20 @@
       :isOpen="isOpenModalEdit"
       :handelCloseModal="handleCloseModalEdit"
     >
-      <form-add-user></form-add-user>
+      <form-user :userInfo="user"></form-user>
     </app-modal>
   </teleport>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { createNamespacedHelpers } from 'vuex'
+const {mapActions}=createNamespacedHelpers("user")
+
+import FormUser from "./FormUser.vue";
 export default {
+  components: {
+    FormUser
+  },
   data() {
     return {
       isOpenModalEdit: false,
