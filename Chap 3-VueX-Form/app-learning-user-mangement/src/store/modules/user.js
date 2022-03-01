@@ -1,3 +1,4 @@
+import { getAllUserApi } from "../../apis/user";
 const state = () => {
     return {
         userList: [{
@@ -48,6 +49,9 @@ const getters = {
     }
 };
 const mutations = {
+    setUserListMutation(state, payload) {
+        state.userList = payload;
+    },
     setSearchNameMutation(state, payload) {
         state.searchName = payload;
     },
@@ -78,6 +82,10 @@ const mutations = {
 
 };
 const actions = {
+    async getAllUserAction(context) {
+        const payload = await getAllUserApi();
+        context.commit("setUserListMutation", payload)
+    },
     setSearchNameAction(context, payload) {
         //context ở đây hiểu như $this.store.state vậy
         setTimeout(() => {

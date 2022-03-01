@@ -15,7 +15,7 @@
 <script>
 import UserItem from "./UserItem.vue";
 import { createNamespacedHelpers } from "vuex";
-const { mapGetters, mapState } = createNamespacedHelpers("user");
+const { mapGetters, mapState, mapActions } = createNamespacedHelpers("user");
 
 export default {
   components: {
@@ -48,6 +48,14 @@ export default {
       userList: (state) => state.userList,
       // userList : "userList" //Đây là cách viết khác nhưng ko nên dùng
     }),
+  },
+  methods: {
+    ...mapActions({
+      getAllUser: "getAllUserAction",
+    }),
+  },
+  created() {
+    this.getAllUser();
   },
 };
 </script>
