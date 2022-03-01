@@ -76,6 +76,7 @@
         </div>
       </div>
     </div>
+    <demo-life-cycle></demo-life-cycle>
     <the-user-management></the-user-management>
     <div class="row">
       <div class="col-12 grid-margin stretch-card">
@@ -362,13 +363,15 @@
 </template>
 
 <script>
+import DemoLifeCycle from './DemoLifeCycle.vue';
 import TheUserManagement from "./TheUserManagement.vue";
 
 export default {
   components: {
     TheUserManagement,
+    DemoLifeCycle
   },
 };
 </script>
 
-<style></style>
+
