@@ -54,6 +54,11 @@ export default {
       getAllUser: "getAllUserAction",
     }),
   },
+  
+  /**tại sao lại dùng lifecycle created
+   * vì khi chúng ta dùng created thì những cái data,state,vuex component nó đã tồn tại rồi thì code tại đây sẽ hạn chế 
+   * hết mức có thể và sau này có cập nhật nó vào cái biến gì đó nó cũng ko bị lỗi
+   */
   created() {
     this.getAllUser();
   },
