@@ -3,10 +3,10 @@
       <ul class="d-flex justify-content-center align-items-center">
           <li>
               <!-- chỗ này nếu dùng thẻ a href thì khi chuyển giữa các trang sẽ bị load lại nên ta phải sử dụng router-link để khi chuyển giữa các trang ko bị load  -->
-              <router-link to="/users" class="mx-3">User</router-link>
+              <router-link :to="{name:'user-list'}" class="mx-3">User</router-link>
           </li>
           <li>
-              <router-link to="/pets"  class="mx-3">Pet</router-link>
+              <router-link :to="{name:'pet-list'}"  class="mx-3">Pet</router-link>
           </li>
       </ul>
   </nav>

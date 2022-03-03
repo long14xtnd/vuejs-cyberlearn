@@ -1,18 +1,10 @@
 import { createStore } from 'vuex'
-
+import users from './modules/users.js'
+import pets from './modules/pets.js'
 const store = createStore({
-    state() {
-        return {
-            count: 0
-        }
-    },
-    mutations: {
-        increment(state) {
-            state.count++
-        }
+    modules: {
+        users,
+        pets
     }
 })
-const app = createApp({ /* your root component */ })
-
-// Install the store instance as a plugin
-app.use(store)
+export default store

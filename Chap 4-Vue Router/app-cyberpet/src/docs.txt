@@ -1,0 +1,6 @@
+luồng xử lý của user detail 
+
+
+Đầu tiên tạo một cái routes /user-detail/:userID,còn ở trang useritem ta push route lên kèm theo với user id 
+sang đến trang user detail cần phải lấy được cái id đó xuống thông qua this.$route.params.userID
+khi lấy được userID rồi thì cần truyền tiếp nó vào actions để nó xử lý lấy ra được cái đúng cái userDetail,xử lý xong thì dùng mapState để lấy được userDetail về để hiển thị ra 
