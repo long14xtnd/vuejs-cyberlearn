@@ -1,6 +1,7 @@
 import UserList from "./pages/UserList.vue";
 import PetList from "./pages/PetList.vue";
 import UserDetail from "./components/UserDetail.vue";
+import PetDetail from "./components/PetDetail.vue"
 // import NotFound from "./components/NotFound.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
@@ -25,6 +26,11 @@ const routes = [
         path: "/user-detail/:userID", //http://localhost:8080/pets,userID là params ta truyền lên url
         component: UserDetail,
         name: "user-detail"
+    },
+    {
+        path: "/pet-detail/:petID", //http://localhost:8080/pets,userID là params ta truyền lên url
+        component: PetDetail,
+        name: "pet-detail"
     },
     { path: '/:pathMatch(.*)*', redirect: "/" },
 ];
