@@ -32,14 +32,14 @@ const routes = [
         component: PetDetail,
         name: "pet-detail"
     },
-    { path: '/:pathMatch(.*)*', redirect: "/" },
+    { path: '/:pathMatch(.*)*', redirect: "/" }, //chỗ này có nghĩa là người dùng nhấn vào đường link ko phù hợp nó sẽ trả về trang chủ
 ];
 //lấy ra bộ tịnh tiến trong website
 const router = createRouter({
     // 4. Provide the history implementation to use. We are using the hash history for simplicity here.
-    history: createWebHistory(), //lưu lại lịch sử khi ta truy cập từng trang web
+    history: createWebHistory(), //lưu lại lịch sử khi ta truy cập từng trang web,ví dụ trước khi vào trang pet ta ở trang user thì từ trang pet nhấn back nó sẽ quay lại trang user
     routes, // viết tắt của `routes: routes`
-    linkActiveClass: "active",
+    linkActiveClass: "active", //class để biết rằng đang active tại trang nào
 });
 
 export default router

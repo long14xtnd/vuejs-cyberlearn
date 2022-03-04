@@ -31,9 +31,7 @@ export default {
     console.log(this.$route.params.userID);
     this.getUserById(this.$route.params.userID);
   },
-  mounted() {
-    console.log(this.userDetail);
-  },
+  
 };
 </script>
 
