@@ -3,10 +3,14 @@
     <div class="container">
       <img alt="Vue logo" src="./assets/logo.png" />
       <learning-reactivity></learning-reactivity>
-      <learning-props image="https://kenh14cdn.com/203336854389633024/2021/2/8/photo-1-161280295473824491863.jpg"></learning-props>
+      <learning-props
+        image="https://kenh14cdn.com/203336854389633024/2021/2/8/photo-1-161280295473824491863.jpg"
+      ></learning-props>
       <learning-methods></learning-methods>
       <learning-computed></learning-computed>
       <learning-watch></learning-watch>
+      <learning-ref-template></learning-ref-template>
+      <learning-provide-inject></learning-provide-inject>
     </div>
   </main>
 </template>
@@ -17,6 +21,9 @@ import LearningProps from "./components/LearningProps.vue";
 import LearningMethods from "./components/LearningMethods.vue";
 import LearningComputed from "./components/LearningComputed.vue";
 import LearningWatch from "./components/LearningWatch.vue";
+import LearningRefTemplate from "./components/LearningRefTemplate.vue";
+import LearningProvideInject from "./components/LearningProvideInject.vue";
+import { provide,ref } from "vue";
 export default {
   name: "App",
   components: {
@@ -24,12 +31,19 @@ export default {
     LearningProps,
     LearningMethods,
     LearningComputed,
-    LearningWatch
+    LearningWatch,
+    LearningRefTemplate,
+    LearningProvideInject,
   },
-  data() {
-    return {
-      url: "https://kenh14cdn.com/203336854389633024/2021/2/8/photo-1-161280295473824491863.jpg",
-    };
+  setup() {
+    const age = ref(22)
+    // provide("name", "Đoàn Hải Long"); 
+    //cứ sau 5s tăng tuổi lên 1
+    setInterval(()=>{
+     age.value += 1
+    }
+    ,5000)
+     provide("age", age);
   },
 };
 </script>
