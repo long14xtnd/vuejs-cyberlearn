@@ -11,8 +11,8 @@
 import { inject } from "vue";
 export default {
   setup() {
-    const name = inject("name","Đoàn Minh Hải"); //chỗ này nếu như provide ko có giá trị thì ta cho nó giá trị mặc định là Đoàn Minh Hải
-     const age = inject("age")
+    const name = inject("name", "Đoàn Minh Hải"); //chỗ này nếu như provide ko có giá trị thì ta cho nó giá trị mặc định là Đoàn Minh Hải
+    const age = inject("age");
     return { name, age };
   },
 };

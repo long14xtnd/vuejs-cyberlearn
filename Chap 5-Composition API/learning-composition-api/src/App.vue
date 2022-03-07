@@ -11,6 +11,7 @@
       <learning-watch></learning-watch>
       <learning-ref-template></learning-ref-template>
       <learning-provide-inject></learning-provide-inject>
+      <learning-vuex></learning-vuex>
     </div>
   </main>
 </template>
@@ -23,6 +24,7 @@ import LearningComputed from "./components/LearningComputed.vue";
 import LearningWatch from "./components/LearningWatch.vue";
 import LearningRefTemplate from "./components/LearningRefTemplate.vue";
 import LearningProvideInject from "./components/LearningProvideInject.vue";
+import LearningVuex from "./components/LearningVuex.vue"
 import { provide,ref } from "vue";
 export default {
   name: "App",
@@ -34,10 +36,11 @@ export default {
     LearningWatch,
     LearningRefTemplate,
     LearningProvideInject,
+    LearningVuex
   },
   setup() {
     const age = ref(22)
-    // provide("name", "Đoàn Hải Long"); 
+    provide("name", "Đoàn Hải Long"); 
     //cứ sau 5s tăng tuổi lên 1
     setInterval(()=>{
      age.value += 1
